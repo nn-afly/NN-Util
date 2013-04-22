@@ -5,7 +5,7 @@ require_once (FS_ROOT_OVERRIDE . "/../../www/lib/framework/db.php");
 
 	$fileout = "/var/www/newznab/misc/testing/bookout.txt";
 		
-	$exludedWords = array(
+	$excludedWords = array(
 		"the",
 		"this",
 		"that",
@@ -20,7 +20,7 @@ require_once (FS_ROOT_OVERRIDE . "/../../www/lib/framework/db.php");
 		"&"
 	);		
 		
-	$exludedPublishers = array(
+	$excludedPublishers = array(
 	);
 		
 	function getBooks()
@@ -35,14 +35,14 @@ require_once (FS_ROOT_OVERRIDE . "/../../www/lib/framework/db.php");
 	foreach($books as $book) 
 	{		
 		$i = 0;
-		if (!in_array($book['publisher'],$exludedPublishers))
+		if (!in_array($book['publisher'],$excludedPublishers))
 		{	
 			$titlewords = explode(" ", $book['name']);
 			$publisherwords = explode(" ", $book['publisher']);
 			
 			foreach($titlewords as $word) 
 			{
-				if (!in_array(strtolower($word),$exludedWords))
+				if (!in_array(strtolower($word),$excludedWords))
 				{
 					if(in_array($word,$publisherwords))
 					{
