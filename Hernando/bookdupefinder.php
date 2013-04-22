@@ -50,7 +50,7 @@ require_once (FS_ROOT_OVERRIDE . "/../../www/lib/framework/db.php");
 						if ($i == 2) //two matching words. Change to experiment
 						{						
 							//add to the output file. When tweaked enough, releases and bookinfo shall be nuked at this point						
-							$output.= $book['name']." - "." - ".$book['publisher']."\n";
+							$output.= $book['name']." - ".$book['publisher']."\n";
 							break;
 						}
 						
