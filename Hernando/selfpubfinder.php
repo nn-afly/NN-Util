@@ -161,12 +161,12 @@ function deleteBook($book)
 {
 	$db = new DB();
 	global $NNBookCoverPath;
-	if ($book['cover'] = 1)
+	if ($book['cover'] == 1)
 	{
 		//delete the cover
 		if (file_exists ($NNBookCoverPath.$book['bookid'].".jpg"))
 		{ 
-		unlink($NNBookCoverPath.$book['bookid'].".jpg");
+			unlink($NNBookCoverPath.$book['bookid'].".jpg");
 		}
 	}
 	
